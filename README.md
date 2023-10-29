@@ -32,7 +32,7 @@ The config file `/etc/docker/daemon.json` should look like:
 ```json
 {
   "ipv6": true,
-  "fixed-cidr-v6": "2001:db8:d0cc:er00:d::/80",
+  "fixed-cidr-v6": "2001:db8:d0cc:e500:d::/80",
   "experimental": true,
   "ip6tables": true,
   "default-address-pools": [
@@ -57,7 +57,11 @@ using the following data structur (which is provided in that project as well):
             - config.yml
             - traefik.yml
 
-**Note**: the file `acme.json` must have the permission `chmod 600 acme.json` and the ownership of `chown root:root acme.json`
+**Note**: the file `acme.json` must have the permission `600` and the ownership of `root:root`:
+```sh
+chmod 600 acme.json
+sudo chown root:root acme.json
+```
 
 Explanation:
 - `acme.json` is used to store all sensitive information from letsencrypt (private key, certificate)
