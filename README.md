@@ -29,3 +29,5 @@ using the following data structur:
     - config.yml
     - traefik.yml
 - docker-compose.yaml
+
+**Note**: the file `acme.json` must have the permission `600` and the ownership of `root`
