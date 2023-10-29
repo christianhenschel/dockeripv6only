@@ -26,8 +26,9 @@ Following the instructions from the docker documentation page:
 
 running docker container as non-root user:
 - [Docker linux postinstall](https://docs.docker.com/engine/install/linux-postinstall/)
+- or just run the script `fix-user-rights.sh`
 
-The `/etc/docker/daemon.json` should look like:
+The config file `/etc/docker/daemon.json` should look like:
 ```.sh
 {
   "ipv6": true,
