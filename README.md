@@ -29,7 +29,7 @@ running docker container as non-root user:
 - or just run the script `fix-user-rights.sh`
 
 The config file `/etc/docker/daemon.json` should look like:
-```.sh
+```json
 {
   "ipv6": true,
   "fixed-cidr-v6": "2001:db8:d0cc:er00:d::/80",
