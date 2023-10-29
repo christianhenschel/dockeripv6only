@@ -12,14 +12,14 @@ I strongly recommend to use a NAT64 gateway (including a DNS64 server for the tr
 
 ## CLATD (464XLAT)
 Follow the instruction from my previous blog entry:
-[henschel.network](https://henschel.network/nat464xlat-with-clatd-on-ubuntu-18-04-lts/)
+- [henschel.network](https://henschel.network/nat464xlat-with-clatd-on-ubuntu-18-04-lts/)
 
 ## Docker installation
 Use the most recent version directly provided by docker.
 
 Following the instructions from the docker documentation page:
-[Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
-[Debian](https://docs.docker.com/engine/install/debian/)
+- [Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+- [Debian](https://docs.docker.com/engine/install/debian/)
 
 ## Traefik with a wildcard certificate from letsencrypt 
 
