@@ -24,6 +24,9 @@ Following the instructions from the docker documentation page:
 - [Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 - [Debian](https://docs.docker.com/engine/install/debian/)
 
+running docker container as non-root user:
+- [Docker linux postinstall](https://docs.docker.com/engine/install/linux-postinstall/)
+
 ## Traefik with a wildcard certificate from letsencrypt
 using the following data structur (which is provided in that project as well):
 - docker
@@ -35,6 +38,11 @@ using the following data structur (which is provided in that project as well):
             - traefik.yml
 
 **Note**: the file `acme.json` must have the permission `chmod 600 acme.json` and the ownership of `chown root:root acme.json`
+
+Explanation:
+- `acme.json` is used to store all sensitive information from letsencrypt (private key, certificate)
+- `config.yml` is used to have externally managed (non container) ressources/servers
+- `traefik.yml` is used to have basic settings like DNS provider for letsencrypt
 
 ### DNS (from Hetzner)
 the basic DNS zone will be provided automatically, like:
@@ -53,3 +61,6 @@ optionally you could harden your domain for email:
 - `example.net MX 0 .` Null MX Record (no mail in and out)
 - `example.net TXT "spfv1 -all"` SPF (Sender Policy Framework) to disallow sending mails with that domain (as envelope-FROM)
 - `_dmarc.example.net TXT "v=DMARC1; p=reject"` DMARC (Domain-based Message Authentication, Reporting and Conformance) minimal record for rejecting unauthenticated senders.
+
+also optionally but very useful, to implement a `CAA` Record:
+- `example.net caa 128 issue "letsencrypt.org"`
