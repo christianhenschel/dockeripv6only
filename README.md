@@ -27,6 +27,25 @@ Following the instructions from the docker documentation page:
 running docker container as non-root user:
 - [Docker linux postinstall](https://docs.docker.com/engine/install/linux-postinstall/)
 
+The `/etc/docker/daemon.json` should look like:
+`
+{
+  "ipv6": true,
+  "fixed-cidr-v6": "2001:db8:d0cc:er00:d::/80",
+  "experimental": true,
+  "ip6tables": true,
+  "default-address-pools": [
+    { "base": "172.17.0.0/16", "size": 16 },
+    { "base": "172.18.0.0/16", "size": 20 },
+    { "base": "172.19.0.0/16", "size": 20 },
+    { "base": "172.20.0.0/14", "size": 20 },
+    { "base": "172.24.0.0/14", "size": 20 },
+    { "base": "172.28.0.0/14", "size": 20 },
+    { "base": "192.168.0.0/16", "size": 24 }
+  ]
+}
+`
+
 ## Traefik with a wildcard certificate from letsencrypt
 using the following data structur (which is provided in that project as well):
 - docker
