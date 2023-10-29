@@ -15,6 +15,7 @@ I strongly recommend to use a NAT64 gateway (including a DNS64 server for the tr
 ## CLATD (464XLAT)
 Follow the instruction from my previous blog entry:
 - [henschel.network](https://henschel.network/nat464xlat-with-clatd-on-ubuntu-18-04-lts/)
+Including using NAT64/DNS64
 
 ## Docker installation
 Use the most recent version directly provided by docker.
@@ -23,9 +24,8 @@ Following the instructions from the docker documentation page:
 - [Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 - [Debian](https://docs.docker.com/engine/install/debian/)
 
-## Traefik with a wildcard certificate from letsencrypt 
-
-using the following data structur:
+## Traefik with a wildcard certificate from letsencrypt
+using the following data structur (which is provided in that project as well):
 - docker
     - traefik
         - docker-compose.yaml
@@ -34,12 +34,10 @@ using the following data structur:
             - config.yml
             - traefik.yml
 
-
-**Note**: the file `acme.json` must have the permission `600` and the ownership of `root`
-
+**Note**: the file `acme.json` must have the permission `chmod 600 acme.json` and the ownership of `chown root:root acme.json`
 
 ### DNS (from Hetzner)
-the basic DNS zone will be provided automatically like:
+the basic DNS zone will be provided automatically, like:
 - SOA
 - NS records
 
