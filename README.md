@@ -28,7 +28,7 @@ running docker container as non-root user:
 - [Docker linux postinstall](https://docs.docker.com/engine/install/linux-postinstall/)
 
 The `/etc/docker/daemon.json` should look like:
-`
+```.sh
 {
   "ipv6": true,
   "fixed-cidr-v6": "2001:db8:d0cc:er00:d::/80",
@@ -44,7 +44,7 @@ The `/etc/docker/daemon.json` should look like:
     { "base": "192.168.0.0/16", "size": 24 }
   ]
 }
-`
+```
 
 ## Traefik with a wildcard certificate from letsencrypt
 using the following data structur (which is provided in that project as well):
