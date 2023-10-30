@@ -4,7 +4,7 @@ how to setup a docker on an ARM64 with IPv6 only (NAT64; 464XLAT) based on Debia
 Requirements:
 - ARM64 Host (Hetzner for example)
 - IPv6
-- NAT64 Gateway (use [nat64.net](https://nat64.net/) if don't have one; thanks for Kaspar Dupont)
+- NAT64 Gateway (use [nat64.net](https://nat64.net) if don't have one; thanks to Kaspar Dupont)
 - Debian 11/Ubuntu 22.04 OS
 - Linux skills
 - basic docker (compose) skills
@@ -90,4 +90,7 @@ also optionally but very useful, to implement a `CAA` Record:
 - `example.net caa 128 issue "letsencrypt.org"`
 
 ## Special Thanks
-My special thanks goes to Daniel Stocker alias Stoege for his great support and my mental support.
+My special thanks goes to the following persons: 
+- Daniel Stocker alias [Stoege](https://blog.stoege.net) for his great support.
+- Kasper Dupont for his great free of charge [NAT64](https://nat64.net) Service.
+- Tore Anderson for his great [CLATD](https://github.com/toreanderson/clatd) (464XLAT) implementation
